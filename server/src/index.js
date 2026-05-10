@@ -602,6 +602,10 @@ app.get("/api/news", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("ARSUS X LIVE 🚀");
+});
+
 app.listen(PORT, () => {
   ensureDb();
   console.log(`ARSUS X server running on http://localhost:${PORT}`);
