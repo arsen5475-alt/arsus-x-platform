@@ -5,7 +5,6 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { nanoid } from "nanoid";
 import fs from "fs";
-import path from "path";
 import { fileURLToPath } from "url";
 
 dotenv.config();
