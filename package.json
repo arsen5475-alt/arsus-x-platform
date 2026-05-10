@@ -1,0 +1,16 @@
+{
+  "name": "arsus-x-platform",
+  "version": "1.4.0",
+  "private": true,
+  "description": "ARSUS X Private Trading Terminal - Alpaca Paper Bridge",
+  "scripts": {
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd server && npm run dev",
+    "client": "cd client && npm run dev",
+    "start": "cd server && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
