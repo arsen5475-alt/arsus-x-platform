@@ -1,6 +1,8 @@
 import express from "express";
 import path from "path";
 import { fileURLToPath } from "url";
+
+const __filename = fileURLToPath(import.meta.url);
 import cors from "cors";
 import dotenv from "dotenv";
 import { nanoid } from "nanoid";
@@ -20,7 +22,6 @@ app.use(express.static(
 
 const PORT = process.env.PORT || 3001;
 
-const __dirname = path.dirname(__filename);
 const DB_DIR = path.join(__dirname, "..", "data");
 const DB_FILE = path.join(DB_DIR, "arsus-x-db.json");
 
