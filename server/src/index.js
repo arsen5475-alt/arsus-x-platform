@@ -1,4 +1,6 @@
 import express from "express";
+import path from "path";
+import { fileURLToPath } from "url";
 import cors from "cors";
 import dotenv from "dotenv";
 import { nanoid } from "nanoid";
@@ -10,6 +12,15 @@ dotenv.config();
 dotenv.config({ path: path.resolve(process.cwd(), "../.env") });
 
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.use(express.static(
+  path.join(__dirname, "../../client/dist")
+));
+
+
 const PORT = process.env.PORT || 3001;
 
 const __filename = fileURLToPath(import.meta.url);
@@ -603,7 +614,9 @@ app.get("/api/news", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("ARSUS X LIVE 🚀");
+  res.sendFile(
+    path.join(__dirname, "../../client/dist/index.html")
+  );
 });
 
 app.listen(PORT, () => {
