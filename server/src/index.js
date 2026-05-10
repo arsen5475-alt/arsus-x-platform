@@ -5,14 +5,12 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { nanoid } from "nanoid";
 import fs from "fs";
-import { fileURLToPath } from "url";
 
 dotenv.config();
 dotenv.config({ path: path.resolve(process.cwd(), "../.env") });
 
 const app = express();
 
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 app.use(express.static(
@@ -22,7 +20,6 @@ app.use(express.static(
 
 const PORT = process.env.PORT || 3001;
 
-const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const DB_DIR = path.join(__dirname, "..", "data");
 const DB_FILE = path.join(DB_DIR, "arsus-x-db.json");
