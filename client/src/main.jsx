@@ -5,7 +5,7 @@ import { Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "rec
 import { createChart, ColorType } from "lightweight-charts";
 import "./styles.css";
 
-const API = "http://localhost:3001/api";
+const API = "https://arsus-x-platform-production.up.railway.app/api";
 
 function money(v) {
   return new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 }).format(Number(v || 0));
